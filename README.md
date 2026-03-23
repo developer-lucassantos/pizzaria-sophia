@@ -1,36 +1,4 @@
-🚀 Sistema Web Completo
-
-Aplicação web fullstack desenvolvida com foco em escalabilidade, performance e experiência do usuário. O projeto simula um sistema real de pedidos online, com autenticação, cardápio dinâmico e área do cliente.
-
-📌 Funcionalidades
-Landing Page moderna e responsiva
-Cardápio dinâmico com filtros
-Sistema de autenticação (JWT + Bcrypt)
-Carrinho de compras
-Área do cliente com histórico de pedidos
-Estrutura preparada para webhooks (tempo real)
-🛠️ Tecnologias Utilizadas
-Frontend: HTML, CSS, JavaScript
-Backend: Node.js
-Autenticação: JWT
-Segurança: Bcrypt
-Banco de Dados: (adicione o que você usar, ex: MongoDB ou MySQL)
-
-Estrutura do projeto:
-pizzaria-sophia/
-├── public/                # Arquivos acessíveis pelo navegador
-│   ├── assets/
-│   │   ├── images/        # Logos, fotos das pizzas, banners
-│   │   ├── icons/         # Favicon, ícones sociais
-│   │   └── audio/         # Push tones e alertas de novos pedidos
-│   ├── css/               # Estilização (Tailwind/Custom)
-│   ├── js/                # Scripts do Frontend (Vanilla JS ou React/Vue)
-│   └── index.html         # Ponto de entrada
-├── src/                   # Código fonte do Backend (API)
-│   ├── controllers/       # Lógica de rotas
-│   ├── models/            # Esquemas do Banco de Dados
-│   ├── routes/            # Definição dos endpoints
-│   ├── middlewares/       # Segurança e Autenticação (JWT)
-│   └── config/            # Variáveis de ambiente e DB
-├── .env                   # Dados sensíveis (Secret Keys, DB URL)
-└── package.json           # Dependências do projeto
+<h1 align="center">🚀 Sistema Web Completo</h1> <p align="center"> Aplicação web fullstack com foco em escalabilidade, performance e experiência do usuário. </p>
+<h2>📌 Funcionalidades</h2> <ul> <li>Landing Page moderna e responsiva</li> <li>Cardápio dinâmico com filtros</li> <li>Autenticação segura (JWT + Bcrypt)</li> <li>Carrinho de compras</li> <li>Área do cliente com histórico de pedidos</li> <li>Preparado para webhooks (tempo real)</li> </ul>
+<h2>🛠️ Tecnologias</h2> <ul> <li><b>Frontend:</b> HTML, CSS, JavaScript</li> <li><b>Backend:</b> Node.js</li> <li><b>Autenticação:</b> JWT</li> <li><b>Segurança:</b> Bcrypt</li> <li><b>Banco:</b> MongoDB / MySQL</li> </ul>
+<h2>📁 Estrutura do Projeto</h2> <pre> pizzaria-sophia/ ├── public/ │ ├── assets/ │ │ ├── images/ │ │ ├── icons/ │ │ └── audio/ │ ├── css/ │ ├── js/ │ └── index.html │ ├── src/ │ ├── controllers/ │ ├── models/ │ ├── routes/ │ ├── middlewares/ │ └── config/ │ ├── .env └── package.json </pre
