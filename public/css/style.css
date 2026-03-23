@@ -1,62 +1,33 @@
-/* Importando variáveis */
-@import url('./variables.css');
+/* Efeitos Gastronômicos Rústicos */
 
 body {
-    font-family: 'Inter', sans-serif;
-    scroll-behavior: smooth;
+    background-color: #0a0a0a;
 }
 
-/* Hero Section com Overlay para leitura */
-.hero-overlay {
-    background: linear-gradient(rgba(2, 48, 89, 0.7), rgba(2, 48, 89, 0.5));
+/* Transição do Header no Scroll */
+#main-header.scrolled {
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 107, 0, 0.2);
 }
 
-/* Botão Flutuante com Efeito Push */
-.floating-order-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: var(--pizzaria-orange);
-    color: white;
-    padding: 15px 25px;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 10px 25px rgba(242, 116, 5, 0.4);
-    z-index: 9999;
-    transition: var(--transition);
+/* Ajuste da imagem no Hero */
+#home img {
+    object-position: 50% 30%;
+    filter: brightness(0.4) contrast(1.1);
 }
 
-.floating-order-btn:hover {
-    transform: translateY(-5px);
-    background-color: var(--pizzaria-orange-hover);
+/* Animação Fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animação Push (Atenção Visual) */
-.push-notify {
-    position: relative;
+.animate-fade-in {
+    animation: fadeIn 1.2s ease-out forwards;
 }
 
-.push-notify::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 50px;
-    border: 2px solid var(--pizzaria-orange);
-    animation: push-animation 2s infinite;
+/* Estilo de título "Pizzaria" */
+.font-accent {
+    letter-spacing: 0.1em;
 }
-
-@keyframes push-animation {
-    0% { transform: scale(1); opacity: 0.8; }
-    100% { transform: scale(1.4); opacity: 0; }
-}
-
-/* Utilitários de Cor */
-.bg-azul { background-color: var(--pizzaria-blue); }
-.text-laranja { color: var(--pizzaria-orange); }

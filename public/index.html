@@ -3,97 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizzaria Sophia | A Melhor Pizza Artesanal</title>
+    <title>Pizzaria Sophia | A Arte da Pizza Italiana</title>
     
-    <meta name="description" content="Saboreie a melhor pizza artesanal da região na Pizzaria Sophia. Ingredientes selecionados e tradição.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="./css/output.css"> <link rel="stylesheet" href="./css/variables.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pizzaria-blue': '#011F3D',
+                        'pizzaria-orange': '#FF6B00',
+                        'pizzaria-gold': '#D4AF37',
+                    },
+                    fontFamily: {
+                        'title': ['"Playfair Display"', 'serif'],
+                        'accent': ['"Bangers"', 'cursive'],
+                        'sans': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="./css/variables.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/components.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-gray-50 font-sans text-gray-900">
+<body class="bg-[#0a0a0a] text-white font-sans overflow-x-hidden">
 
-    <header class="fixed w-full z-50 transition-all duration-300 bg-pizzaria-blue shadow-lg" id="main-header">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-black text-white tracking-tighter hover:opacity-90 transition">
-                SOPHIA<span class="text-pizzaria-orange">.</span>
-            </a>
+    <header class="fixed w-full z-50 transition-all duration-500 py-6" id="main-header">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex flex-col border-l-4 border-pizzaria-orange pl-3">
+                <span class="font-accent text-3xl tracking-wider text-white">SOPHIA</span>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-pizzaria-orange font-bold">Pizzaria Artesanal</span>
+            </div>
             
-            <ul class="hidden md:flex space-x-8 font-semibold text-white">
+            <ul class="hidden lg:flex space-x-10 font-medium uppercase text-xs tracking-widest">
                 <li><a href="#home" class="hover:text-pizzaria-orange transition">Início</a></li>
-                <li><a href="#sobre" class="hover:text-pizzaria-orange transition">Quem Somos</a></li>
-                <li><a href="#localizacao" class="hover:text-pizzaria-orange transition">Localização</a></li>
+                <li><a href="#sobre" class="hover:text-pizzaria-orange transition">Nossa Arte</a></li>
+                <li><a href="#localizacao" class="hover:text-pizzaria-orange transition">Onde Estamos</a></li>
                 <li><a href="./pages/trabalhe-conosco.html" class="hover:text-pizzaria-orange transition">Trabalhe Conosco</a></li>
             </ul>
 
-            <div class="flex items-center gap-4">
-                <a href="./pages/login.html" class="hidden sm:flex items-center bg-white/10 hover:bg-pizzaria-orange text-white px-5 py-2 rounded-lg font-bold transition">
-                    <i class="fas fa-user-circle mr-2"></i>Área de Membros
-                </a>
-                <button id="mobile-menu-btn" class="md:hidden text-white text-2xl" aria-label="Abrir Menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+            <a href="./pages/login.html" class="bg-pizzaria-orange hover:bg-orange-600 text-white px-6 py-2 rounded-full font-bold text-xs uppercase transition-all shadow-[0_0_20px_rgba(255,107,0,0.4)]">
+                Área de Cliente
+            </a>
         </nav>
     </header>
 
-    <section id="home" class="relative h-screen flex items-center justify-center text-center text-white pt-20">
-        <div class="absolute inset-0 bg-black/60 z-10"></div>
-        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=2000" 
-             alt="Pizza Sophia saindo do forno" 
-             class="absolute inset-0 w-full h-full object-cover">
+    <section id="home" class="relative h-screen flex items-center justify-start overflow-hidden px-6 lg:px-24">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent z-10"></div>
+            <img src="./assets/images/pizzasophia.jpeg" 
+                 class="w-full h-full object-cover object-center scale-110 brightness-[0.4]" alt="Background">
+        </div>
         
-        <div class="relative z-20 px-4 max-w-4xl">
-            <span class="bg-pizzaria-orange text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest mb-6 inline-block">Tradição & Sabor</span>
-            <h1 class="text-5xl md:text-8xl font-black mb-6 leading-none">A PIZZA QUE <br> VOCÊ MERECE.</h1>
-            <p class="text-lg md:text-2xl text-gray-200 mb-10 font-medium">
-                Massa de fermentação lenta, ingredientes premium e o carinho da Sophia em cada detalhe.
+        <div class="relative z-20 max-w-3xl animate-fade-in">
+            <h2 class="text-pizzaria-orange font-accent text-2xl mb-2 tracking-widest">Desde 2024</h2>
+            <h1 class="font-title text-6xl md:text-9xl leading-[0.9] mb-6 italic">
+                A verdadeira <br> <span class="text-white not-italic font-extrabold uppercase">Pizza</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-lg font-light leading-relaxed border-l-2 border-pizzaria-orange/30 pl-6">
+                Receita de família mantida em segredo por 3 gerações. Farinha 00, fermentação lenta e o carinho de 3 gerações.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="./pages/cardapio.html" class="bg-pizzaria-orange hover:bg-orange-600 text-white px-10 py-4 rounded-xl font-black text-xl shadow-2xl transition transform hover:scale-105">
-                    FAZER PEDIDO AGORA
+            <div class="flex flex-col sm:flex-row gap-6">
+                <a href="./pages/cardapio.html" class="bg-pizzaria-orange text-white px-12 py-5 rounded-none font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-500 text-center">
+                    Ver o Cardápio
                 </a>
-                <a href="#sobre" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-xl font-bold text-xl transition">
-                    CONHECER A PIZZARIA
+                <a href="#sobre" class="border border-white/30 text-white px-12 py-5 rounded-none font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all text-center backdrop-blur-sm font-light">
+                    Nossa História
                 </a>
             </div>
         </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
+            <div class="w-[1px] h-20 bg-gradient-to-b from-transparent to-pizzaria-orange"></div>
+        </div>
     </section>
 
-    <section id="sobre" class="py-24 bg-white overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-16">
-                <div class="w-full md:w-1/2 relative">
-                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-pizzaria-orange/20 rounded-full blur-3xl"></div>
-                    <img src="https://images.unsplash.com/photo-1571327073757-51d059531159?auto=format&fit=crop&q=80&w=1000" 
-                         alt="Nossa Cozinha" 
-                         class="rounded-3xl shadow-2xl relative z-10">
-                    <div class="absolute -bottom-6 -right-6 bg-pizzaria-blue p-8 rounded-2xl shadow-xl hidden lg:block z-20">
-                        <span class="block text-4xl font-black text-pizzaria-orange">10+</span>
-                        <span class="text-white font-bold uppercase text-xs tracking-tighter">Anos de perfeição</span>
-                    </div>
+    <section id="sobre" class="py-32 bg-[#0a0a0a] relative">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+            <div class="relative order-2 lg:order-1">
+                <div class="absolute -top-10 -left-10 w-40 h-40 border-t-2 border-l-2 border-pizzaria-orange/50 z-0"></div>
+                <img src="./assets/images/pizzasophia.jpeg" 
+                     class="relative z-10 w-full rounded-none grayscale-[0.2] hover:grayscale-0 transition-all duration-700 shadow-2xl" 
+                     alt="Nossa Pizza">
+                <div class="absolute -bottom-6 -right-6 bg-pizzaria-blue p-10 z-20 shadow-2xl border-t-4 border-pizzaria-orange">
+                    <span class="font-accent text-6xl text-pizzaria-orange">10+</span>
+                    <p class="text-[10px] uppercase tracking-widest mt-2 font-bold text-white/70 italic">Anos de perfeição</p>
                 </div>
-                <div class="w-full md:w-1/2">
-                    <h2 class="text-pizzaria-blue text-4xl md:text-5xl font-black mb-6 leading-tight">Uma história de amor <br> pelas fatias.</h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                        Na Sophia, não apenas fazemos pizzas; cultivamos memórias. Cada disco de massa passa por 48h de maturação, resultando em uma borda aerada e crocante que derrete na boca.
+            </div>
+            
+            <div class="order-1 lg:order-2">
+                <h3 class="text-pizzaria-orange font-accent text-xl mb-4 tracking-widest uppercase">Tradição de Família</h3>
+                <h2 class="font-title text-5xl md:text-6xl mb-8 leading-tight italic">3 Gerações, uma única paixão.</h2>
+                <div class="space-y-6 text-gray-400 font-light leading-relaxed text-lg">
+                    <p>
+                        A Pizzaria Sophia não nasceu de um plano de negócios, mas sim de uma mesa farta e domingos inesquecíveis. Passado de pai para filho, preservamos o ritual.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4">
-                            <div class="bg-orange-100 p-3 rounded-lg text-pizzaria-orange"><i class="fas fa-leaf text-xl"></i></div>
-                            <div>
-                                <h4 class="font-bold text-pizzaria-blue">Ingredientes Frescos</h4>
-                                <p class="text-sm text-gray-500">Tomates italianos e queijos selecionados diariamente.</p>
-                            </div>
+                    <p class="border-l-4 border-pizzaria-orange/20 pl-6 italic text-white/80">
+                        "Aqui não fazemos fast-food. Fazemos comida que abraça. Cada disco de massa é aberto individualmente, respeitando a fermentação de 48 horas."
+                    </p>
+                    <div class="grid grid-cols-2 gap-8 pt-6">
+                        <div>
+                            <span class="block text-white font-bold uppercase text-xs tracking-widest mb-2">Ingredientes</span>
+                            <p class="text-sm">Marcas líderes e tomates San Marzano.</p>
                         </div>
-                        <div class="flex items-start gap-4">
-                            <div class="bg-blue-100 p-3 rounded-lg text-pizzaria-blue"><i class="fas fa-fire text-xl"></i></div>
-                            <div>
-                                <h4 class="font-bold text-pizzaria-blue">Forno a Lenha</h4>
-                                <p class="text-sm text-gray-500">O autêntico sabor defumado que só a lenha proporciona.</p>
-                            </div>
+                        <div>
+                            <span class="block text-white font-bold uppercase text-xs tracking-widest mb-2">Preparo</span>
+                            <p class="text-sm">Artesanal, manual e com alma.</p>
                         </div>
                     </div>
                 </div>
@@ -101,70 +122,28 @@
         </div>
     </section>
 
-    <section id="localizacao" class="py-24 bg-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-pizzaria-blue text-4xl font-black mb-12 uppercase tracking-tighter">Venha nos visitar</h2>
-            <div class="bg-white p-6 rounded-3xl shadow-2xl grid md:grid-cols-3 gap-8 items-center">
-                <div class="text-left space-y-6 p-4">
-                    <div>
-                        <h4 class="text-pizzaria-orange font-black uppercase text-sm mb-2">Endereço</h4>
-                        <p class="text-pizzaria-blue font-bold">Rua da Sophia, 777 - Bairro Nobre, São Paulo - SP</p>
-                    </div>
-                    <div>
-                        <h4 class="text-pizzaria-orange font-black uppercase text-sm mb-2">Horários</h4>
-                        <p class="text-pizzaria-blue font-bold">Terça a Domingo: 18h às 00h</p>
-                    </div>
-                    <div>
-                        <h4 class="text-pizzaria-orange font-black uppercase text-sm mb-2">Contato</h4>
-                        <p class="text-pizzaria-blue font-bold">(11) 99999-9999</p>
-                    </div>
-                </div>
-                <div class="md:col-span-2 h-80 bg-gray-200 rounded-2xl flex items-center justify-center border-4 border-white shadow-inner overflow-hidden">
-                    <p class="text-gray-400 font-bold italic text-center">
-                        <i class="fas fa-map-marked-alt text-4xl mb-3 block"></i>
-                        Insira aqui o Google Maps Embed da Sophia
-                    </p>
-                </div>
+    <a href="./pages/cardapio.html" class="floating-sophia-btn">
+        <div class="btn-content">
+            <span class="btn-text">Faça seu pedido</span>
+            <div class="btn-icon">
+                <i class="fas fa-utensils"></i>
+                <div class="sonar-wave"></div>
             </div>
-        </div>
-    </section>
-
-    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="btn-order-float group" id="wpp-button">
-        <div class="icon-wrapper">
-            <i class="fas fa-pizza-slice"></i>
-            <span class="absolute -top-8 right-0 bg-pizzaria-blue text-white text-[10px] px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition duration-300 font-bold whitespace-nowrap">VAMOS PEDIR?</span>
-            <span class="push-dot"></span>
-            <div class="sonar-wave"></div>
         </div>
     </a>
 
-    <footer class="bg-pizzaria-blue text-white py-16">
-        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12 border-b border-white/10 pb-12">
-            <div class="col-span-2">
-                <div class="text-3xl font-black mb-6">SOPHIA<span class="text-pizzaria-orange">.</span></div>
-                <p class="text-gray-400 max-w-sm">Criando experiências gastronômicas inesquecíveis através da autêntica pizza italiana desde 2015.</p>
+    <footer class="bg-black py-20 border-t border-white/5">
+        <div class="container mx-auto px-6 text-center">
+            <div class="font-accent text-4xl mb-6">SOPHIA</div>
+            <p class="text-gray-600 text-xs uppercase tracking-[0.5em] mb-10">O sabor que resiste ao tempo</p>
+            <div class="flex justify-center space-x-8 mb-10 text-gray-400">
+                <a href="#" class="hover:text-pizzaria-orange transition"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-pizzaria-orange transition"><i class="fab fa-facebook-p text-xl"></i></a>
             </div>
-            <div>
-                <h5 class="font-black uppercase text-sm mb-6 text-pizzaria-orange">Links Úteis</h5>
-                <ul class="space-y-4 text-gray-400 font-medium">
-                    <li><a href="./pages/cardapio.html" class="hover:text-white transition">Nosso Cardápio</a></li>
-                    <li><a href="./pages/trabalhe-conosco.html" class="hover:text-white transition">Trabalhe Conosco</a></li>
-                    <li><a href="#" class="hover:text-white transition">Termos de Uso</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="font-black uppercase text-sm mb-6 text-pizzaria-orange">Siga-nos</h5>
-                <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-pizzaria-orange transition text-xl"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-pizzaria-orange transition text-xl"><i class="fab fa-facebook-f"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="container mx-auto px-6 pt-8 text-center text-gray-500 text-sm">
-            &copy; 2026 Pizzaria Sophia - Todos os direitos reservados. Desenvolvido com carinho.
+            <p class="text-gray-700 text-[10px] uppercase tracking-widest">© 2026 Pizzaria Sophia | Todos os direitos reservados</p>
         </div>
     </footer>
 
-    <script src="./js/main.js" defer></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

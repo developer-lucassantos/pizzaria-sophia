@@ -1,56 +1,74 @@
-/* Botão Flutuante Sophia */
-.btn-order-float {
+/* Botão Flutuante Estilo Menu Digital */
+
+.floating-sophia-btn {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 1000;
+    bottom: 40px;
+    right: 40px;
+    z-index: 100;
     text-decoration: none;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.btn-order-float:hover {
-    transform: scale(1.1);
+.btn-content {
+    display: flex;
+    align-items: center;
+    background: #FF6B00;
+    padding: 6px 6px 6px 25px;
+    border-radius: 50px;
+    box-shadow: 0 15px 35px rgba(255, 107, 0, 0.4);
+    transition: all 0.4s ease;
 }
 
-.icon-wrapper {
-    width: 65px;
-    height: 65px;
-    background-color: #F27405; /* Laranja */
+.btn-text {
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 15px;
+}
+
+.btn-icon {
+    width: 50px;
+    height: 50px;
+    background: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 1.8rem;
-    box-shadow: 0 10px 25px rgba(242, 116, 5, 0.4);
+    color: #FF6B00;
+    font-size: 1.2rem;
     position: relative;
 }
 
-/* Efeito de Push/Notificação visual */
-.push-dot {
-    position: absolute;
-    top: 2px;
-    right: 5px;
-    width: 15px;
-    height: 15px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    border: 2px solid white;
+.floating-sophia-btn:hover .btn-content {
+    background: #011F3D;
+    transform: translateY(-5px);
 }
 
-/* Onda de choque (Animação) */
+.floating-sophia-btn:hover .btn-icon {
+    color: #011F3D;
+}
+
+/* Sonar Wave */
 .sonar-wave {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: #F27405;
-    opacity: 0.7;
+    background: #FF6B00;
     z-index: -1;
     animation: sonar 2s infinite;
 }
 
 @keyframes sonar {
-    0% { transform: scale(1); opacity: 0.7; }
-    100% { transform: scale(1.6); opacity: 0; }
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+    .btn-text { display: none; }
+    .btn-content { padding: 6px; }
 }

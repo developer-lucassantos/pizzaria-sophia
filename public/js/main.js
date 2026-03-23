@@ -1,48 +1,22 @@
 /**
- * Jarbas - Pizzaria Sophia JS
+ *  Pizzaria Sophia
+ * Controle de UI e UX
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initHeaderScroll();
-    handleMobileMenu();
-});
+    const header = document.getElementById('main-header');
 
-// Muda o estilo do header ao rolar a página
-function initHeaderScroll() {
-    const nav = document.querySelector('nav');
+    // Efeito de Scroll no Header
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.classList.add('shadow-xl', 'py-2');
-            nav.style.backgroundColor = 'rgba(2, 48, 89, 0.95)';
+        if (window.scrollY > 100) {
+            header.classList.add('py-2', 'shadow-2xl');
+            header.style.backgroundColor = 'rgba(2, 48, 89, 0.98)';
         } else {
-            nav.classList.remove('shadow-xl', 'py-2');
-            nav.style.backgroundColor = '#023059';
+            header.classList.remove('py-2', 'shadow-2xl');
+            header.style.backgroundColor = '#023059';
         }
     });
-}
 
-// Menu Mobile (Simples e Direto)
-function handleMobileMenu() {
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    
-    if(btn && menu) {
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    }
-}
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./public/**/*.{html,js}"],
-  theme: {
-    extend: {
-      colors: {
-        'pizzaria-blue': '#023059',
-        'pizzaria-orange': '#F27405',
-      }
-    },
-  },
-  plugins: [],
-}
+    // Log de Inicialização (Jarbas System)
+    console.log(" Sophia System Online [v1.0.0]");
+});

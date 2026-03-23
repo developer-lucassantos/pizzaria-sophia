@@ -1,0 +1,45 @@
+/* Efeitos Gastronômicos Rústicos */
+
+body {
+  background-color: #0a0a0a;
+}
+
+/* Transição do Header no Scroll */
+
+#main-header.scrolled {
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 107, 0, 0.2);
+}
+
+/* Ajuste da imagem no Hero */
+
+#home img {
+  -o-object-position: 50% 30%;
+     object-position: 50% 30%;
+  filter: brightness(0.4) contrast(1.1);
+}
+
+/* Animação Fade-in */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* Estilo de título "Pizzaria" */
+
+.font-accent {
+  letter-spacing: 0.1em;
+}
