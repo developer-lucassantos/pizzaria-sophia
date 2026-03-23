@@ -1,0 +1,15 @@
+:root {
+    /* Paleta Principal */
+    --pizzaria-blue: #023059;
+    --pizzaria-orange: #F27405;
+    --pizzaria-orange-hover: #D96704;
+    
+    /* Cores de Apoio */
+    --white: #FFFFFF;
+    --light-bg: #F9FAFB;
+    --text-dark: #1F2937;
+    --text-muted: #6B7280;
+    
+    /* Transições */
+    --transition: all 0.3s ease-in-out;
+}

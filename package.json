@@ -1,0 +1,15 @@
+{
+  "name": "pizzaria-sophia",
+  "version": "1.0.0",
+  "description": "Site profissional Pizzaria Sophia",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./public/css/style.css -o ./public/css/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

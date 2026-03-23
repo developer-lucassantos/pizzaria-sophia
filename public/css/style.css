@@ -1,0 +1,62 @@
+/* Importando variáveis */
+@import url('./variables.css');
+
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Hero Section com Overlay para leitura */
+.hero-overlay {
+    background: linear-gradient(rgba(2, 48, 89, 0.7), rgba(2, 48, 89, 0.5));
+}
+
+/* Botão Flutuante com Efeito Push */
+.floating-order-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--pizzaria-orange);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 10px 25px rgba(242, 116, 5, 0.4);
+    z-index: 9999;
+    transition: var(--transition);
+}
+
+.floating-order-btn:hover {
+    transform: translateY(-5px);
+    background-color: var(--pizzaria-orange-hover);
+}
+
+/* Animação Push (Atenção Visual) */
+.push-notify {
+    position: relative;
+}
+
+.push-notify::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    border: 2px solid var(--pizzaria-orange);
+    animation: push-animation 2s infinite;
+}
+
+@keyframes push-animation {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* Utilitários de Cor */
+.bg-azul { background-color: var(--pizzaria-blue); }
+.text-laranja { color: var(--pizzaria-orange); }
