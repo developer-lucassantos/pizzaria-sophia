@@ -1,22 +1,31 @@
-/**
- *  Pizzaria Sophia
- * Controle de UI e UX
- */
-
+/* public/js/main.js */
 document.addEventListener('DOMContentLoaded', () => {
-    const header = document.getElementById('main-header');
+    initHeaderScroll();
+    initMobileMenu();
+});
 
-    // Efeito de Scroll no Header
+// Efeito de sombra no header ao rolar
+function initHeaderScroll() {
+    const header = document.getElementById('main-header');
+    if (!header) return;
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            header.classList.add('py-2', 'shadow-2xl');
-            header.style.backgroundColor = 'rgba(2, 48, 89, 0.98)';
+        if (window.scrollY > 50) {
+            header.classList.add('shadow-2xl', 'bg-sophia-dark');
         } else {
-            header.classList.remove('py-2', 'shadow-2xl');
-            header.style.backgroundColor = '#023059';
+            header.classList.remove('shadow-2xl');
         }
     });
+}
 
-    // Log de Inicialização (Jarbas System)
-    console.log(" Sophia System Online [v1.0.0]");
-});
+// Menu Mobile (Abrir/Fechar)
+function initMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (btn && menu) {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    }
+}

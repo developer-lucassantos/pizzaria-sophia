@@ -1,33 +1,37 @@
-/* Efeitos Gastronômicos Rústicos */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Righteous&display=swap');
+
+:root {
+    --sophia-orange: #FF6B00;
+    --sophia-dark: #0a0a0a;
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+}
 
 body {
-    background-color: #0a0a0a;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--sophia-dark);
+    -webkit-tap-highlight-color: transparent;
 }
 
-/* Transição do Header no Scroll */
-#main-header.scrolled {
-    background-color: rgba(0, 0, 0, 0.95);
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255, 107, 0, 0.2);
+/* Efeito de Vidro nos Cards */
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
 }
 
-/* Ajuste da imagem no Hero */
-#home img {
-    object-position: 50% 30%;
-    filter: brightness(0.4) contrast(1.1);
-}
-
-/* Animação Fade-in */
-@keyframes fadeIn {
+/* Animação de entrada dos itens */
+@keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-.animate-fade-in {
-    animation: fadeIn 1.2s ease-out forwards;
+.animate-item {
+    animation: fadeInUp 0.5s ease forwards;
 }
 
-/* Estilo de título "Pizzaria" */
-.font-accent {
-    letter-spacing: 0.1em;
-}
+/* Scrollbar invisível mas funcional */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+/* Input Styles */
+input::placeholder { color: rgba(255,255,255,0.3); }

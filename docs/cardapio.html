@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Cardápio | Pizzaria Sophia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Righteous&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'sophia-orange': '#FF6B00', 'sophia-red': '#E31C1C', 'sophia-dark': '#0a0a0a', 'sophia-gray': '#1a1a1a' },
+                    fontFamily: { 'righteous': ['Righteous', 'cursive'], 'sans': ['Poppins', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-sophia-dark text-white pt-24 pb-44">
+    <header class="fixed top-0 w-full z-50 bg-sophia-dark/95 backdrop-blur-md border-b border-white/5 py-4 px-5 flex justify-between items-center">
+        <a href="index.html" class="font-righteous text-2xl text-white tracking-widest">SOPHIA<span class="text-sophia-orange">.</span></a>
+        <a href="index.html" class="text-gray-400 font-bold text-xs uppercase tracking-widest"><i class="fas fa-chevron-left mr-2"></i>Voltar</a>
+    </header>
+
+    <main class="container mx-auto px-5">
+        <div class="text-center mb-10"><h1 class="font-righteous text-5xl">Cardápio</h1></div>
+        
+        <div id="pizzas-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            </div>
+    </main>
+
+    <div id="cart-bar" onclick="window.sophiaCart.abrirModal()" class="fixed bottom-0 left-0 w-full bg-sophia-orange p-6 z-[100] transform translate-y-full transition-all duration-500 rounded-t-[2.5rem] shadow-2xl cursor-pointer">
+        <div class="container mx-auto flex justify-between items-center text-black font-black">
+            <div class="flex items-center gap-4">
+                <div class="bg-black text-white w-12 h-12 rounded-xl flex items-center justify-center relative">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-white text-black text-[10px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-sophia-orange">0</span>
+                </div>
+                <span id="cart-total" class="text-2xl">R$ 0,00</span>
+            </div>
+            <i class="fas fa-chevron-up text-2xl animate-bounce"></i>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="fixed inset-0 z-[200] hidden bg-black/90 backdrop-blur-sm">
+        <div id="modal-content" class="absolute bottom-0 w-full bg-sophia-gray rounded-t-[3rem] max-h-[90vh] flex flex-col translate-y-full transition-transform duration-300">
+            <div class="p-6 border-b border-white/5 flex justify-between items-center">
+                <button id="btn-back" onclick="window.sophiaCart.prevStep()" class="hidden text-gray-400"><i class="fas fa-arrow-left"></i></button>
+                <h2 id="step-title" class="font-righteous text-xl uppercase tracking-widest">Seu Pedido</h2>
+                <button onclick="window.sophiaCart.fecharModal()" class="text-2xl">&times;</button>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-6">
+                <div id="step-1" class="step-container space-y-4"></div> <div id="step-2" class="step-container hidden space-y-4"> <input type="text" id="cust-nome" placeholder="Nome completo" class="w-full bg-sophia-dark border border-white/10 p-4 rounded-2xl outline-none focus:border-sophia-orange">
+                    <input type="tel" id="cust-tel" placeholder="Seu Telefone" class="w-full bg-sophia-dark border border-white/10 p-4 rounded-2xl outline-none focus:border-sophia-orange">
+                </div>
+                <div id="step-3" class="step-container hidden space-y-4"> <input type="text" id="cust-end" placeholder="Rua, número e bairro" class="w-full bg-sophia-dark border border-white/10 p-4 rounded-2xl outline-none focus:border-sophia-orange">
+                    <input type="text" id="cust-ref" placeholder="Ponto de referência ou Ap" class="w-full bg-sophia-dark border border-white/10 p-4 rounded-2xl outline-none focus:border-sophia-orange">
+                </div>
+                <div id="step-4" class="step-container hidden space-y-4 text-center"> <div class="grid grid-cols-1 gap-3">
+                        <button onclick="window.sophiaCart.setPay('Pix')" class="pay-opt p-5 bg-sophia-dark border border-white/5 rounded-2xl">PIX</button>
+                        <button onclick="window.sophiaCart.setPay('Cartão')" class="pay-opt p-5 bg-sophia-dark border border-white/5 rounded-2xl">CARTÃO (MAQUININHA)</button>
+                        <button onclick="window.sophiaCart.setPay('Dinheiro')" class="pay-opt p-5 bg-sophia-dark border border-white/5 rounded-2xl">DINHEIRO</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-8 bg-sophia-dark border-t border-white/5">
+                <button id="btn-next" onclick="window.sophiaCart.nextStep()" class="w-full bg-sophia-orange py-5 rounded-2xl font-black text-lg shadow-xl">AVANÇAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/carrinho.js"></script>
+</body>
+</html>
